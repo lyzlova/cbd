@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  background-color: $about-bcg-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover,
+button:focus {
+  transform: scale(1.1);
+}
+
+a:hover,
+a:focus {
+  text-shadow: 1px 1px 9px rgb(110, 119, 74)
+}

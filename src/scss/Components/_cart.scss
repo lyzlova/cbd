@@ -1,0 +1,48 @@
+.cart {
+  display: none;
+  position: fixed;
+  width: 80%;
+  padding: 40px 30px;
+  top: 60px;
+  right: 50%;
+  transform: translate(50%, 0);
+  background-color: $header-line-through;
+  z-index: 2;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    @include flex(flex, row, false, center, space-evenly);
+    border: 1px solid $tab-text-color;
+    padding: 30px;
+  }
+
+  &.is-open {
+    @include flex(flex, column, false, center, space-evenly);
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 10px;
+    @include font(20px, $main-text-color, 400, 2.5, center, 2px, uppercase);
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid $main-text-color;
+  }
+
+  td {
+    padding: 10px;
+    @include font(16px, $main-text-color, 400, 2.5, center, 2px, uppercase);
+  }
+
+  .del__item {
+    cursor: pointer;
+    width: 10px;
+  }
+}

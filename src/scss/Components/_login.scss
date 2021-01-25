@@ -1,0 +1,79 @@
+.registration {
+  display: none;
+  position: fixed;
+  width: 50%;
+  padding: 20px 30px;
+  top: 66px;
+  right: 50%;
+  transform: translate(50%, 0);
+  background-color: $header-line-through;
+  z-index: 3;
+  &.is-open {
+    @include flex(flex, column, false, center, space-evenly);
+  }
+
+  &__btn {
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin-left: auto;
+    svg {
+      fill: $main-text-color;
+    }
+  }
+}
+
+.form-nav {
+  padding: 20px 0;
+  &:not(:last-child) {
+    border-bottom: 1px solid $main-text-color;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include font(
+      24px,
+      $main-text-color,
+      400,
+      1.364,
+      center,
+      6.16px,
+      uppercase
+    );
+  }
+
+  &__content {
+    @include flex(flex, column, false, center, center);
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-right: 1px solid $tab-text-color;
+    background-color: $main-text-color;
+    outline: none;
+    @include font(12px, $tab-text-color, 300, 1.2, left, 6.16px);
+  }
+
+  &__btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: $card-add-bcg-color;
+    @include font(12px, $main-text-color, 400, 1, left, 1px, uppercase);
+  }
+
+  input::placeholder {
+    @include font(12px, $tab-text-color, 300, 1.2, left);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    @include font(18px, $tab-text-color, 400, 2.222, left);
+    box-shadow: 0 0 0px 1000px $tab-text-color inset !important;
+  }
+}

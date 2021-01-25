@@ -1,0 +1,93 @@
+.intro {
+  @include flex(flex, column, nowrap, flex-end, space-between);
+  padding: 0 30px;
+
+  &__content {
+    @include flex(flex, column, nowrap, flex-end, space-between);
+    position: absolute;
+    top: 0;
+    right: 12%;
+    transform: translate(0%, 50%);
+  }
+
+  &__title {
+    @include font(55px, $main-text-color, 400, 1.364, right, 6.16px, uppercase);
+    text-shadow: 0 0 7px $header-shadow-color;
+  }
+
+  &__subtitle {
+    margin: 36px 0 56px;
+    @include font(24px, $main-text-color, 300, 1, right, 6.16px);
+  }
+
+  &__btn {
+    position: relative;
+    padding: 26px 80px 26px 40px;
+    margin-bottom: 30px;
+    border: 1px solid $border-color;
+    @include font(20px, $main-text-color, 300, 1, center, 1, uppercase);
+    background-color: inherit;
+
+    &::after {
+      position: absolute;
+      content: " ";
+      width: 44px;
+      height: 2px;
+      background-color: $main-text-color;
+      top: 46%;
+      right: 0;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  &__link {
+    @include flex(flex, row, nowrap, center, center);
+
+    .link-content {
+      &__link {
+        margin-right: 20px;
+        @include font(18px, $main-text-color, 300, 4.167, right, 6.16px);
+      }
+
+      &__icon {
+        width: 20px;
+        height: 10px;
+      }
+    }
+  }
+
+  .matrix-text {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: block;
+      align-self: flex-start;
+      @include font(
+        26px,
+        $main-text-color,
+        300,
+        2.115,
+        right,
+        1.76px,
+        uppercase
+      );
+      transform: matrix(1.36347632888026e-16, -1, 1, 0, 0, -200);
+    }
+  }
+
+  .arrow {
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    right: 50%;
+    &:hover,
+    &:focus {
+     transform: scale(1)
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      fill: $main-text-color;
+    }
+  }
+}

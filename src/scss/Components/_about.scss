@@ -1,0 +1,90 @@
+.about {
+  position: relative;
+  &__content {
+    padding: 100px 30px;
+    @include flex(flex, column, nowrap, center, center);
+  }
+}
+
+.trust {
+  @include flex(flex, column, nowrap, center, center);
+  margin-bottom: 100px;
+  @media screen and (min-width: 768px) {
+    width: 690px;
+    height: 200px;
+    background-image: url("../images/bcg-images/Holder.png");
+    @include background(no-repeat, top, cover);
+  }
+
+  &__title {
+    @include font(24px, $about-text-color, 400, 3, center, 4.4px, uppercase);
+  }
+}
+
+.tabs {
+  .tabs-nav {
+    @include flex(flex, row, nowrap, flex-end, space-between);
+    margin-bottom: 80px;
+    &__item {
+      flex: 1;
+      padding: 8px;
+      border-bottom: 2px solid $about-tab-border;
+      cursor: pointer;
+      @include font(16px, $about-text-color, 400, 2.5, left, 4.4px, uppercase);
+      @media screen and (min-width: 768px) {
+        padding: 20px;
+        @include font(30px, $about-text-color, 400, 2.5, left);
+      }
+      &.is-active {
+        border-bottom: 2px solid $about-tab-active;
+      }
+      &:hover,
+      &:focus {
+        text-shadow: 1px 1px 9px rgb(110, 119, 74);
+      }
+    }
+  }
+
+  &__content {
+    .tab {
+      display: none;
+
+      &__title {
+        margin-bottom: 40px;
+        @include font(
+          24px,
+          $tab-title-color,
+          400,
+          1.667,
+          left,
+          4.4px,
+          uppercase
+        );
+      }
+
+      &__text {
+        @include font(18px, $tab-text-color, 300, 2.222, left, 0.88px);
+        &:not(:last-child) {
+          margin-bottom: 60px;
+        }
+      }
+
+      &__img:first-child {
+        margin-bottom: 28px;
+      }
+
+      &__wrap {
+        @media screen and (min-width: 768px) {
+          @include flex(flex, row, nowrap, center, space-between);
+          & > div {
+            flex: 0 1 48%;
+          }
+        }
+      }
+    }
+
+    .tab.is-active {
+      @include flex(flex, row, nowrap, center, space-between);
+    }
+  }
+}

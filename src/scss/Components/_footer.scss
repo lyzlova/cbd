@@ -1,0 +1,116 @@
+.footer {
+  padding: 170px 0 57px;
+  &__wrap {
+    @include flex(flex, row, nowrap, flex-start, center);
+    @media screen and (max-width: 767px) {
+      @include flex(flex, column, nowrap, center, center);
+    }
+  }
+}
+
+.policy-used {
+  @include flex(flex, column, nowrap, center, center);
+  padding: 90px 0;
+  flex: 0 1 30%;
+  border-top: 2px solid $card-add-bcg-color;
+  a {
+    @include font(
+      14px,
+      $card-add-bcg-color,
+      300,
+      2.857,
+      center,
+      3.3px,
+      uppercase
+    );
+  }
+}
+
+.newsletter {
+  @include flex(flex, column, nowrap, center, center);
+  flex: 0 1 30%;
+  @media screen and (max-width: 767px) {
+    order: 1;
+  }
+
+  &__logo {
+    @include font(60px, $card-add-bcg-color, 400, 1, center, 1px, uppercase);
+    margin-bottom: 64px;
+    margin-top: -30px;
+  }
+
+  &__title {
+    position: relative;
+    @include font(
+      18px,
+      $about-text-color,
+      400,
+      4.167,
+      center,
+      3.3px,
+      uppercase
+    );
+    &::after {
+      position: absolute;
+      content: " ";
+      width: 2px;
+      height: 56px;
+      background-color: $tab-text-color;
+      top: -25%;
+      right: 50%;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  p {
+    @include font(
+      11px,
+      $about-text-color,
+      300,
+      3.636,
+      center,
+      6.16px,
+      uppercase
+    );
+  }
+}
+
+.page-info {
+  @include flex(flex, column, nowrap, center, center);
+  flex: 0 1 30%;
+  padding: 90px 0;
+  border-top: 2px solid $card-add-bcg-color;
+  a {
+    @include font(
+      14px,
+      $card-add-bcg-color,
+      300,
+      2.857,
+      center,
+      3.3px,
+      uppercase
+    );
+  }
+}
+
+.social {
+  flex: 1 1 30%;
+  @include flex(flex, row, nowrap, center, space-between);
+  margin-bottom: 74px;
+  &__item {
+    @include flex(flex, row, nowrap, center, space-between);
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  &__icon {
+    height: 20px;
+    width: 26px;
+    fill: $card-add-bcg-color;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+}

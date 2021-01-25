@@ -1,0 +1,62 @@
+.products {
+  padding: 70px 0;
+  &__title {
+    margin-bottom: 80px;
+    @include font(30px, $about-text-color, 400, 2.5, center, 1, uppercase);
+  }
+}
+
+.card {
+  @include flex(flex, column, nowrap, stretch, space-between);
+  align-self: stretch;
+  background-color: $main-text-color;
+
+  &__main {
+    @include flex(flex, column, nowrap, center, space-between);
+    padding: 40px 100px;
+  }
+
+  &__icon {
+    width: 98px;
+    height: 16px;
+    margin-bottom: 20px;
+    fill: $tab-text-color;
+  }
+
+  &__title {
+    @include font(18px, $about-text-color, 400, 1.5, center, 3.3px, uppercase);
+  }
+
+  &__img {
+    margin: 40px 0;
+  }
+
+  &__footer {
+    @include flex(flex, row, nowrap, center, space-between);
+    background-color: $card-price-bcg-color;
+  }
+
+  &__price {
+    padding: 28px 30px;
+    @include font(18px, $about-text-color, 400, 1, left, 1px, uppercase);
+  }
+
+  &__add {
+    padding: 30px 90px 30px 42px;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background-color: $card-add-bcg-color;
+    @include font(20px, $main-text-color, 400, 1, left, 1px, uppercase);
+    &::after {
+      position: absolute;
+      content: " ";
+      width: 44px;
+      height: 2px;
+      background-color: $main-text-color;
+      top: 46%;
+      right: 0;
+      transform: translate(-50%, 50%);
+    }
+  }
+}

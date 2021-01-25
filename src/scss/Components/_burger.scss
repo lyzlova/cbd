@@ -1,0 +1,29 @@
+.burger {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+  order: 1;
+
+  svg {
+    fill: $main-text-color;
+  }
+
+  &__icon-cross {
+    display: none;
+  }
+
+  &.is-open &__icon-cross {
+    display: block;
+  }
+
+  &.is-open &__icon-burger {
+    display: none;
+  }
+  
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+}

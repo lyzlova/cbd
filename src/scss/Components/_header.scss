@@ -1,0 +1,123 @@
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url("../images/bcg-images/intro-bcg.jpg");
+  @include background(no-repeat, top, cover);
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url("../images/bcg-images/intro-bcg@2x.jpg");
+  }
+
+  @media screen and (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 3dppx),
+    screen and (min-resolution: 288dpi) {
+    background-image: url("../images/bcg-images/intro-bcg@3x.jpg");
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include flex(flex, row, wrap, center, space-between);
+  border-bottom: 1px solid $header-line-color;
+  z-index: 20;
+  @media screen and (max-width: 767px) {
+    padding: 10px 20px;
+  }
+
+  .logo {
+    @include font(30px, $main-text-color, 400, 1, center, 1px, uppercase);
+  }
+
+  &.navigation--active {
+    background-color: $main-text-color;
+    a,
+    span {
+      color: $card-add-bcg-color;
+    }
+    svg {
+      fill: $card-add-bcg-color;
+    }
+  }
+}
+
+.menu {
+  @include flex(flex, row, wrap, false, space-between);
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    @include flex(flex, column, false, flex-end, space-evenly);
+    display: none;
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    padding: 60px 30px;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2;
+  }
+
+  &__item {
+    margin: 0 10px;
+    @media screen and (min-width: 1200px) {
+      margin: 0 20px;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    @include font(18px, $main-text-color, 400, 2.5, center, 1, uppercase);
+    &--active {
+      text-decoration: line-through $header-line-through;
+    }
+  }
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.info-header {
+  @include flex(flex, row, wrap, center, space-between);
+
+  &__item {
+    @include flex(flex, row, wrap, center, space-between);
+    padding: 10px;
+    @media screen and (min-width: 768px) {
+      padding: 15px;
+      border-left: 1px solid $header-line-color;
+    }
+    @media screen and (min-width: 1200px) {
+      padding: 25px;
+      border-left: 1px solid $header-line-color;
+    }
+
+    .icon {
+      height: 16px;
+      width: 18px;
+      margin-right: 6px;
+    }
+  }
+
+  &__link {
+    @include font(18px, $main-text-color, 400, 1, center, 1px, uppercase);
+    &--cart {
+      display: block;
+      margin-right: 8px;
+    }
+  }
+
+  &__amount {
+    @include font(18px, $main-text-color, 400, 1, center);
+  }
+}

@@ -1,0 +1,98 @@
+.testimonials {
+  @include flex(flex, column, wrap, center, center);
+  position: relative;
+  height: 800px;
+
+  &__content {
+    @include flex(flex, column, wrap, center, center);
+    &:nth-child(1) {
+      background-image: url("../images/bcg-images/testimonial-bcg.jpg");
+      @include background(no-repeat, center, cover);
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url("../images/bcg-images/testimonial-bcg@2x.jpg");
+      }
+
+      @media screen and (min-device-pixel-ratio: 3),
+        screen and (min-resolution: 3dppx),
+        screen and (min-resolution: 288dpi) {
+        background-image: url("../images/bcg-images/testimonial-bcg@3x.jpg");
+      }
+    }
+
+    &:nth-child(2) {
+      background-image: url("../images/bcg-images/intro-bcg.jpg");
+      @include background(no-repeat, center, cover);
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url("../images/bcg-images/intro-bcg@2x.jpg");
+      }
+
+      @media screen and (min-device-pixel-ratio: 3),
+        screen and (min-resolution: 3dppx),
+        screen and (min-resolution: 288dpi) {
+        background-image: url("../images/bcg-images/intro-bcg@3x.jpg");
+      }
+    }
+    &:nth-child(3) {
+      background-image: url("../images/bcg-images/testimonial-bcg.jpg");
+      @include background(no-repeat, center, cover);
+
+      @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+        background-image: url("../images/bcg-images/testimonial-bcg@2x.jpg");
+      }
+
+      @media screen and (min-device-pixel-ratio: 3),
+        screen and (min-resolution: 3dppx),
+        screen and (min-resolution: 288dpi) {
+        background-image: url("../images/bcg-images/testimonial-bcg@3x.jpg");
+      }
+    }
+  }
+
+  &__text {
+    margin: 40px 0;
+    @include font(22px, $main-text-color, 300, 1.818, center, 4.4px);
+    @media screen and (min-width: 768px) {
+      max-width: 770px;
+    }
+  }
+
+  &__icon {
+    width: 100px;
+    height: 16px;
+    fill: $testimonials-ratings-color;
+  }
+
+  &__author {
+    position: relative;
+    @include font(24px, $main-text-color, 400, 3.125, center, 4.4px, uppercase);
+    font-style: normal;
+    &::before {
+      position: absolute;
+      content: " ";
+      width: 45px;
+      height: 2px;
+      background-color: $main-text-color;
+      top: 43%;
+      left: -40%;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  .matrix-text {
+    display: none;
+    @media screen and (min-width: 1024px) {
+      display: block;
+      align-self: start;
+      @include font(24px, $main-text-color, 400, 2.5, center, 4.4px, uppercase);
+      transform: matrix(1.36347632888026e-16, 1, -1, 0, 0, 50);
+    }
+  }
+}

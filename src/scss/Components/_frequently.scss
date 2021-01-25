@@ -1,0 +1,48 @@
+.featured {
+  @include flex(flex, column, wrap, center, center);
+  padding: 45px 0 150px;
+
+  &__title {
+    margin-bottom: 45px;
+    @include font(30px, $about-text-color, 400, 2.5, center, 4.4px, uppercase);
+  }
+}
+
+.accordion {
+  &__title {
+    position: relative;
+    @include font(18px, $tab-text-color, 300, 4.167, left);
+    &::before {
+      position: absolute;
+      content: " ";
+      width: 20px;
+      height: 20px;
+      background-image: url("../images/icon/cross.png");
+      top: 25%;
+      left: -4%;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    padding-left: 60px;
+    border-top: 2px solid $accordion-border-color;
+    @media screen and (min-width: 768px) {
+      width: 570px;
+    }
+    &.is-open > p {
+      display: block;
+    }
+    &:hover,
+    &:focus {
+      text-shadow: 1px 1px 9px rgb(110, 119, 74);
+    }
+  }
+
+  &__text {
+    display: none;
+    margin-bottom: 36px;
+    @include font(18px, $tab-title-color, 300, 2.222, left, 0.88px);
+  }
+}

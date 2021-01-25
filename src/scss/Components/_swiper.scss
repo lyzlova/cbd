@@ -1,0 +1,69 @@
+/* featured swiper*/
+.swiper-products__container {
+  position: relative;
+  .swiper-slide {
+    height: auto;
+    @media screen and (min-width: 768px) {
+      max-width: 600px;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  &::after {
+    content: "";
+  }
+}
+
+.swiper-button-prev > .products__icon,
+.swiper-button-next > .products__icon {
+  fill: $tab-text-color;
+  height: 20px;
+  width: 36px;
+}
+
+.swiper-products__container > .swiper-button-prev {
+  left: 42%;
+}
+
+.swiper-products__container > .swiper-button-next {
+  left: 52%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 100px;
+  top: 98%;
+}
+
+/* testimonial swipper*/
+
+.testimonials {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 120px;
+    height: 100px;
+    border: 1px solid $main-text-color;
+    top: 0;
+    margin: 0;
+    bottom: 0;
+  }
+
+  .swiper-slyde {
+    @include flex(flex, column, nowrap, center, center);
+    height: auto;
+  }
+}
+
+.testimonials > .swiper-button-content {
+  position: absolute;
+  width: 259px;
+  height: 100px;
+  bottom: 0;
+}
+
+.swiper-button-prev > .testimonials__icon,
+.swiper-button-next > .testimonials__icon {
+  fill: $main-text-color;
+}

@@ -1,0 +1,19 @@
+@import "./utils/placeholder";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/vissualy-hidden";
+@import "./base/container";
+
+@import "./base/main";
+@import "./Components/header.scss";
+@import "./Components/burger.scss";
+@import "./Components/intro.scss";
+@import "./Components/about.scss";
+@import "./Components/products.scss";
+@import "./Components/swiper.scss";
+@import "./Components/frequently.scss";
+@import "./Components/testimonials.scss";
+@import "./Components/footer.scss";
+@import "./Components/form.scss";
+@import "./Components/cart.scss";
+@import "./Components/login.scss";
